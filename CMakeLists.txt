@@ -4,7 +4,11 @@ project(Brik)
 ## SOURCES ##
 
 add_executable(Brik
-    src/main.cpp
+    src/Brik.cpp
+    src/EventManager.cpp
+    src/EventManager.h
+    src/Slider.cpp
+    src/Slider.h
 )
 
 ## COMPILE OPTIONS ##
