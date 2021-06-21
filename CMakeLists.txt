@@ -4,9 +4,13 @@ project(Brik)
 ## SOURCES ##
 
 add_executable(Brik
+    src/Breakable.cpp
+    src/Breakable.h
     src/Brik.cpp
     src/EventManager.cpp
     src/EventManager.h
+    src/Map.cpp
+    src/Map.h
     src/Slider.cpp
     src/Slider.h
 )
