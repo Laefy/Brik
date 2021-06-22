@@ -81,7 +81,7 @@ bool Map::BounceOnWalls(BounceResult& result, const Sphere& sphere, const sf::Ve
 
 bool Map::BounceOnSlider(BounceResult& result, const Sphere& sphere, const sf::Vector2f& speed)
 {
-    if (const auto bounced = ::Bounce(result, sphere, speed, m_slider.GetBoundingBox()))
+    if (::Bounce(result, sphere, speed, m_slider.GetBoundingBox()))
     {
         const auto impact = sphere.center + speed * result.rate;
 

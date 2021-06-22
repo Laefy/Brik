@@ -5,12 +5,11 @@ std::optional<IntersectResult> Intersect(const Segment& s1, const Segment& s2)
     const auto v1 = s1.second - s1.first;
     const auto v2 = s2.second - s2.first;
 
-    const auto d = s2.first - s1.first;
-
+    const auto d       = s2.first - s1.first;
     const auto v1_x_v2 = Cross(v1, v2);
-    const auto d_x_v1  = Cross(d, v1);
 
-    if (const auto are_parallel = IsEpsilon(v1_x_v2))
+    const auto are_parallel = IsEpsilon(v1_x_v2);
+    if (are_parallel)
     {
         return std::nullopt;
     }
