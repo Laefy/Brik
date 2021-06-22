@@ -51,4 +51,4 @@ Make sure the `cwd` entry is set to the following: `"cwd": "${workspaceFolder}"`
 Finally, if you are using `gdb` (on Linux for instance), also ensure that `miDebuggerPath` points to `gdb` executable.
 Save the `launch.json` file.
 
-From now on, pressing F5 or running `Debug: Start Debugging.` should allow you to start the game.
+From now on, pressing F5 or running `Debug: Start Debugging` should allow you to start the game.
