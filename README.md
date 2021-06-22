@@ -43,9 +43,12 @@ Use F7 or run `CMake: Build` to compile the project.
 Press F5 or run `Debug: Start Debugging`.\
 Select `C++ (GDB/LLDB)` or `C++ (Windows)` depending on your environnement.\
 Then select `Default Configuration`.\
-If you are not prompt for these choices, make sure there is no `launch.json` file inside the `.vscode` folder and repeat the previous steps.\
+If you are not prompt for these choices, make sure there is no `launch.json` file inside the `.vscode` folder and repeat the previous steps.
 
 A brand new `launch.json` file should have been generated inside the `.vscode` folder.\
 Replace the `program` entry by the following: `"program": "${command:cmake.launchTargetPath}"`.\
-Make sure the `cwd` entry is set to the following: `"cwd": "${workspaceFolder}"`.
-If you are using `gdb` (on Linux for instance), also ensure that `miDebuggerPath` points to `gdb` executable.
+Make sure the `cwd` entry is set to the following: `"cwd": "${workspaceFolder}"`.\
+Finally, if you are using `gdb` (on Linux for instance), also ensure that `miDebuggerPath` points to `gdb` executable.
+Save the `launch.json` file.
+
+From now on, pressing F5 or running `Debug: Start Debugging.` should allow you to start the game.
