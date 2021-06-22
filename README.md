@@ -48,7 +48,6 @@ If you are not prompt for these choices, make sure there is no `launch.json` fil
 A brand new `launch.json` file should have been generated inside the `.vscode` folder.\
 Replace the `program` entry by the following: `"program": "${command:cmake.launchTargetPath}"`.\
 Make sure the `cwd` entry is set to the following: `"cwd": "${workspaceFolder}"`.\
-Finally, if you are using `gdb` (on Linux for instance), also ensure that `miDebuggerPath` points to `gdb` executable.
 Save the `launch.json` file.
 
 From now on, pressing F5 or running `Debug: Start Debugging` should allow you to start the game.
