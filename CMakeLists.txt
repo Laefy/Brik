@@ -4,6 +4,8 @@ project(Brik)
 ## SOURCES ##
 
 add_executable(Brik
+    src/Ball.cpp
+    src/Ball.h
     src/Breakable.cpp
     src/Breakable.h
     src/Brik.cpp
@@ -13,6 +15,11 @@ add_executable(Brik
     src/Map.h
     src/Slider.cpp
     src/Slider.h
+    src/Physics/Bounce.cpp
+    src/Physics/Bounce.h
+    src/Physics/Geometry.h
+    src/Physics/Intersect.cpp
+    src/Physics/Intersect.h
 )
 
 ## COMPILE OPTIONS ##

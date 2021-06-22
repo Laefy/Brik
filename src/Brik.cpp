@@ -1,3 +1,4 @@
+#include "Ball.h"
 #include "EventManager.h"
 #include "Map.h"
 #include "Slider.h"
@@ -6,7 +7,7 @@
 
 int main()
 {
-    sf::RenderWindow window { sf::VideoMode(800, 600), "Brik" };
+    sf::RenderWindow window { sf::VideoMode(800, 800), "Brik" };
 
     sf::View view;
     view.setCenter(sf::Vector2f { 0, 0 });
@@ -14,9 +15,10 @@ int main()
     window.setView(view);
 
     Map map;
-    map.Load("assets/map1.brik");
+    map.Load("assets/map.brik");
 
-    Slider slider;
+    auto& slider = map.GetSlider();
+    Ball ball { slider.GetTopCenter() };
 
     EventManager event_manager { window, slider };
 
@@ -29,10 +31,13 @@ int main()
         event_manager.ProcessEvents();
 
         slider.Update(dt);
+        ball.Update(dt, map);
 
         window.clear();
         map.Render(window);
         slider.Render(window);
+        ball.Render(window);
+
         window.display();
 
         const auto min_frame_dt = sf::milliseconds(1'000 / 60);

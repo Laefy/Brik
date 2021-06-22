@@ -4,7 +4,9 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 
-Breakable::Breakable(size_t x, size_t y) : m_position { -1.f + SIZE.x * x, 1.f - SIZE.y * y }
+Breakable::Breakable(size_t x, size_t y)
+    : m_position { -1.f + SIZE.x * x, 1.f - SIZE.y * y }
+    , m_bbox { m_position, sf::Vector2f { m_position.x + SIZE.x, m_position.y - SIZE.y } }
 {}
 
 void Breakable::Render(sf::RenderTarget& target) const
