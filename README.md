@@ -1,3 +1,34 @@
+# Compiler
+
+In order to build the project, you will need a compiler that supports C++17 and its libraries.\
+If you use GCC, make sure you use at least the version 9.1.
+
+### Notes for Windows
+
+If you are on Windows and do not have Visual Studio >= 17 (not VSCode) installed, you will have to install MSYS2 to get an up-to-date version of GCC.
+
+Follow the instructions on this page : https://www.msys2.org/.
+
+Edit the "Path" environment variable (the user or system one):
+1. Add "C:\msys64\mingw64\bin" to it (if you installed MSYS2 elsewhere, then update the path accordingly).
+2. If you had a previous MinGW version installed (usually located in C:\mingw"), remove its bin folder from the Path.
+
+Open VSCode.\
+Run the command `Preferences: Open User Settings`.\
+Search for the setting `CMake: Mingw Search Dirs` and add `"C:\msys64\mingw64` to it (without the bin folder).\
+Restart VSCode, run the command `CMake: Scan For Kits`, then `CMake: Edit User-Local CMake Kits`.\
+Add the following code inside the JSON of the MSYS2 compilers:
+```json
+"preferredGenerator": {
+  "name": "MinGW Makefiles"
+},
+"environmentVariables": {
+  "CMT_MINGW_PATH": "C:\\msys64\\mingw64\\bin"
+}
+```
+
+---
+
 # Installation of dependencies
 
 This project depends on the [SFML library](https://www.sfml-dev.org/index.php). 
