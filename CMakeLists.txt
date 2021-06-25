@@ -35,7 +35,7 @@ endif()
 ## SFML ##
 
 find_package(SFML COMPONENTS graphics window system)
-target_link_libraries(Brik PRIVATE sfml-graphics sfml-window sfml-system)
+target_link_libraries(Brik PRIVATE sfml-graphics sfml-window sfml-system stdc++fs)
 
 if (WIN32)
     add_custom_command(TARGET Brik POST_BUILD
